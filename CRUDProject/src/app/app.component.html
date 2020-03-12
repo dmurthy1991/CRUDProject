@@ -1,0 +1,31 @@
+<mat-toolbar color="primary" class="header">
+  <div>Store Management System</div>
+  <span class="nav-tool-items">
+      <mat-icon (click)="sidenav.toggle()" class="hamburger">menu</mat-icon>
+    </span>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <!-- Sidenav -->
+  <mat-sidenav #sidenav [mode]="isBiggerScreen() ? 'over' : 'side'" [(opened)]="opened" [fixedInViewport]="true"
+    [fixedTopGap]>
+    <mat-nav-list>
+        <a mat-list-item routerLinkActive="active" routerLink="/stores">
+          <mat-icon>format_list_bulleted</mat-icon> Stores
+        </a>
+
+      <a mat-list-item routerLinkActive="active" routerLink="/add-store">
+        <mat-icon>add</mat-icon> Add Store
+      </a>
+      <a mat-list-item routerLinkActive="active" routerLink="/edit-store">
+        <mat-icon>update</mat-icon> Edit Store
+      </a>
+      
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <!-- Main content -->
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

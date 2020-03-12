@@ -1,0 +1,61 @@
+<div class="title-group">
+        <h1 class="mat-h1">Edit Store</h1>
+        <mat-divider fxFlex="1 0"></mat-divider>
+      </div>
+      
+      <!-- Form -->
+      <div class="inner-wrapper">
+        <form [formGroup]="storeForm" (ngSubmit)="updateStoreAddForm()" #resetStoreForm="ngForm" novalidate>
+          <mat-card>
+            <div class="controlers-wrapper">
+              <!-- Id -->
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="ID" formControlName="id">
+                <mat-error *ngIf="handleError('id', 'required')">
+                  You must provide an<strong>Id</strong>
+                </mat-error>
+              </mat-form-field>
+      
+              <!-- Name -->
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Name" formControlName="name">
+                <mat-error *ngIf="handleError('name', 'required')">
+                  You must provide a<strong> Name</strong>
+                </mat-error>
+              </mat-form-field>
+    
+            </div>
+          </mat-card>  
+          
+          <mat-card>
+                <div class="controlers-wrapper">
+                  <!-- Address -->
+                  <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Address" formControlName="address">
+                        <mat-error *ngIf="handleError('address', 'required')">
+                          You must provide a<strong> address</strong>
+                        </mat-error>
+                  </mat-form-field>
+          
+                  <!-- City -->
+                  <mat-form-field class="example-full-width">
+                        <input matInput placeholder="City" formControlName="city">
+                        <mat-error *ngIf="handleError('city', 'required')">
+                          You must provide a<strong> city</strong>
+                        </mat-error>
+                  </mat-form-field>
+          
+                </div>
+              </mat-card>
+          
+      
+          <!-- Update -->
+          <mat-card>
+            <div class="full-wrapper button-wrapper">
+              <div class="button-wrapper">
+                <button mat-flat-button color="warn">Update</button>
+              </div>
+            </div>
+          </mat-card>
+        </form>
+      </div>
